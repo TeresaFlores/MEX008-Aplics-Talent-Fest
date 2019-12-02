@@ -37,3 +37,6 @@ const config = {
   
   export default Firebase;
 
+  // const firebaseConf = firebase.initializeApp(config);
+  // export default firebaseConf;
+
