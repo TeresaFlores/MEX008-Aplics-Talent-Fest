@@ -48,7 +48,7 @@ class Requisicion extends Component {
       if (params.name && params.email && params.phone && params.phone && params.message) {
         // enviamos nuestro objeto "params" a firebase database
         console.log(firebaseConf.auth().currentUser)
-        firebaseConf.database().ref('form').push(params).then(() => {
+        firebaseConf.database().ref('paramsform').push(params).then(() => {
           // Si todo es correcto, actualizamos nuestro estado para mostrar una alerta.
           this.showAlert('success', 'Your message was sent successfull');
         }).catch((e) => {
