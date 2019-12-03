@@ -6,8 +6,8 @@ const Account = () => (
   <div>
     <h1>Home</h1>
  <Requisicion />
-    
+
   </div>
 );
 
-export default Account;
+export default Account; 

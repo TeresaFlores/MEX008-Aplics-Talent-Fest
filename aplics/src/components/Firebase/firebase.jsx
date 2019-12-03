@@ -41,7 +41,5 @@ class FirebaseLogin extends Component {
 }
 
 
-
 export default FirebaseLogin;
 export const firebaseConf = firebase.initializeApp(config);
-

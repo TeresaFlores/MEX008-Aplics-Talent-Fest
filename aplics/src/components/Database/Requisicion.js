@@ -13,7 +13,6 @@ class Requisicion extends Component {
         alertData: {}
       };
     }
-  
     // Mostrar una alerta cuando se envia el formulario
     showAlert(type, message) {
       this.setState({
@@ -24,17 +23,14 @@ class Requisicion extends Component {
         this.setState({ alert: false });
       }, 4000)
     }
-  
     // Con esta funcion borramos todos los elementos del formulario
     resetForm() {
       this.refs.contactForm.reset();
     }
-  
     // Funcion para enviar la informacion del formulario a Firebase Database
     sendMessage(e) {
       // Detiene la acción predeterminada del elemento
       e.preventDefault();
-      
       // Creamos un objeto con los valores obtenidos de los inputs
       const params = {
         name: this.inputName.value,
@@ -54,7 +50,6 @@ class Requisicion extends Component {
         approved: this.inputApproved.value,
         message: this.textAreaMessage.value
       };
-      
       // Validamos que no se encuentren vacios los principales elementos de nuestro formulario
       if (params.name && params.department && params.area && params.contract && params.number && params.job && params.replacement
         && params.scholarship && params.language && params.travel && params.experience && params. place && params. workingHours 
@@ -76,7 +71,6 @@ class Requisicion extends Component {
         this.showAlert('warning', 'Please fill the form');
       };
     }
-  
     render() {
       return (
         <div>
@@ -88,9 +82,9 @@ class Requisicion extends Component {
           <div className='container' style={{ padding: `40px 0px` }}>
             <div >
                 <h2>FORMULARIO REQUISICIONES</h2> 
-               
+
                 <form onSubmit={this.sendMessage.bind(this)} ref='contactForm' >
-                  
+
                   <h4>Datos relevantes del puesto</h4>
                   <div>
                     <label htmlFor='name'>Nombre del puesto</label>
@@ -211,5 +205,4 @@ class Requisicion extends Component {
       );
     }
   }
-  
   export default Requisicion;
