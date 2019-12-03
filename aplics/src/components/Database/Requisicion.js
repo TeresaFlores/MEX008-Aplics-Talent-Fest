@@ -1,6 +1,6 @@
 // import React from 'react';
 import React, { Component } from 'react';
-import firebaseConf from '../Firebase/firebase';
+import {firebaseConf} from '../Firebase/firebase';
 
 class Requisicion extends Component {
 
@@ -47,11 +47,13 @@ class Requisicion extends Component {
       // Validamos que no se encuentren vacios los principales elementos de nuestro formulario
       if (params.name && params.email && params.phone && params.phone && params.message) {
         // enviamos nuestro objeto "params" a firebase database
+        console.log(firebaseConf.auth().currentUser)
         firebaseConf.database().ref('form').push(params).then(() => {
           // Si todo es correcto, actualizamos nuestro estado para mostrar una alerta.
           this.showAlert('success', 'Your message was sent successfull');
-        }).catch(() => {
+        }).catch((e) => {
           // Si ha ocurrido un error, actualizamos nuestro estado para mostrar el error 
+          console.error(e);
           this.showAlert('danger', 'Your message could not be sent');
         });
         // limpiamos nuestro formulario llamando la funcion resetform
