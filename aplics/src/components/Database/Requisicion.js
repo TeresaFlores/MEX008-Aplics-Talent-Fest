@@ -75,7 +75,7 @@ class Requisicion extends Component {
           <div className='container' style={{ padding: `40px 0px` }}>
             <div className='row'>
               <div className='col-sm-4'>
-                <h2>Contact Form</h2>
+                <h2>FORMULARIO REQUISICIONES</h2>
                 <form onSubmit={this.sendMessage.bind(this)} ref='contactForm' >
                   <div className='form-group'>
                     <label htmlFor='name'>Name</label>
