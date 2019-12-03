@@ -1,0 +1,43 @@
+.home-bground {
+    background-color: #3C3FA0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#home-title {
+    display: flex;
+    padding: 2.5%;
+    font-size: 2.7rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.section-home {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.home-buttons-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 5rem;
+}
+
+.home-buttons {
+    width: 25vw;
+    height: 10vh;
+    background-color: white;
+    color: #3C3FA0;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: 1px;  
+  }
+
+  .img-done {
+      width: 67vw;
+      height: 73vh;
+  }

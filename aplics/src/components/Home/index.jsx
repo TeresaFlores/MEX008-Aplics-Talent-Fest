@@ -6,7 +6,7 @@ const Account = () => (
   <div>
     <h1>Home</h1>
  <Requisicion />
-    
+  
   </div>
 );
 
