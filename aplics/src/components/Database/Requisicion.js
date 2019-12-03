@@ -38,14 +38,27 @@ class Requisicion extends Component {
       // Creamos un objeto con los valores obtenidos de los inputs
       const params = {
         name: this.inputName.value,
-        email: this.inputEmail.value,
-        city: this.inputCity.value,
-        phone: this.inputPhone.value,
+        department: this.inputDepartment.value,
+        area: this.inputArea.value,
+        contract: this.inputContract.value,
+        number: this.inputNumber.value,
+        job: this.inputJob.value,
+        replacement: this.inputReplacement.value,
+        scholarship: this.inputScholarship.value,
+        language: this.inputLanguage.value,
+        travel: this.inputTravel.value,
+        experience: this.inputExperience.value,
+        place: this.inputPlace.value,
+        workingHours: this.inputWorkingHours.value,
+        salary: this.inputSalary.value,
+        approved: this.inputApproved.value,
         message: this.textAreaMessage.value
       };
       
       // Validamos que no se encuentren vacios los principales elementos de nuestro formulario
-      if (params.name && params.email && params.phone && params.phone && params.message) {
+      if (params.name && params.department && params.area && params.contract && params.number && params.job && params.replacement
+        && params.scholarship && params.language && params.travel && params.experience && params. place && params. workingHours 
+        && params.salary && params.approved &&params.message) {
         // enviamos nuestro objeto "params" a firebase database
         console.log(firebaseConf.auth().currentUser)
         firebaseConf.database().ref('paramsform').push(params).then(() => {
@@ -73,45 +86,125 @@ class Requisicion extends Component {
             </div>
           </div>}
           <div className='container' style={{ padding: `40px 0px` }}>
-            <div className='row'>
-              <div className='col-sm-4'>
-                <h2>FORMULARIO REQUISICIONES</h2>
+            <div >
+                <h2>FORMULARIO REQUISICIONES</h2> 
+               
                 <form onSubmit={this.sendMessage.bind(this)} ref='contactForm' >
-                  <div className='form-group'>
-                    <label htmlFor='name'>Name</label>
-                    <input type='text' className='form-control' id='name' 
-                      placeholder='Name' ref={name => this.inputName = name} 
-                    />
+                  
+                  <h4>Datos relevantes del puesto</h4>
+                  <div>
+                    <label htmlFor='name'>Nombre del puesto</label>
+                    <input type='text'  id='name' 
+                      placeholder='Name' ref={name => this.inputName = name} />
                   </div>
-                  <div className='form-group'>
-                    <label htmlFor='exampleInputEmail1'>Email</label>
-                    <input type='email' className='form-control' id='email' 
-                      placeholder='Email' ref={email => this.inputEmail = email} 
-                    />
+
+                  <div>
+                    <label htmlFor='department'>Departamento</label>
+                    <input type='text'  id='department' 
+                      placeholder='Department' ref={department => this.inputDepartment = department} />
                   </div>
-                  <div className='form-group'>
-                    <label htmlFor='city'>City</label>
-                    <select className='form-control' id='city' ref={city => this.inputCity = city}>
-                      <option value='México'>México</option>
-                      <option value='Guadalajara'>Guadalajara</option>
-                      <option value='Monterrey'>Monterrey</option>
+
+                  <div>
+                    <label htmlFor='area'>Jefe de área</label>
+                    <input type='text'  id='area' 
+                      placeholder='Nombre' ref={area => this.inputArea = area} />
+                  </div>
+
+                  <div >
+                    <label htmlFor='contract'>Tipo de contrato</label>
+                    <select  id='contract' ref={contract => this.inputContract = contract}>
+                      <option value='Definido'>Definido</option>
+                      <option value='Indefinico'>Indefinido</option>
                     </select>
                   </div>
-                  <div className='form-group'>
-                    <label htmlFor='phone'>Phone</label>
-                    <input type='number' className='form-control' id='phone' 
-                      placeholder='+52 1' ref={phone => this.inputPhone = phone} 
-                    />
+
+                  <div>
+                    <label htmlFor='number'>Número de vacantes</label>
+                    <input type='number'  id='number' 
+                      placeholder='No.' ref={number => this.inputNumber = number}/>
                   </div>
-                  <div className='form-group'>
-                    <label htmlFor='message'>Message</label>
+
+                  <div >
+                    <label htmlFor='job'>Tipo de puesto</label>
+                    <select  id='job' ref={job => this.inputJob = job}>
+                      <option value='Nuevo'>Nuevo</option>
+                      <option value='Remplazo'>Remplazo</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor='replacement'>Remplaza a:</label>
+                    <input type='text'  id='replacement' 
+                      placeholder='Nombre' ref={replacement => this.inputReplacement = replacement} />
+                  </div>
+
+                  <h4>Requisitos que debe cubrir</h4>
+                  <div>
+                    <label htmlFor='scholarship'>Escolaridad</label>
+                    <input type='text'  id='scholarship' 
+                      placeholder='Escolaridad' ref={scholarship => this.inputScholarship = scholarship} />
+                  </div>
+
+                  <div >
+                    <label htmlFor='language'>Idioma</label>
+                    <select  id='language' ref={language => this.inputLanguage = language}>
+                      <option value='Español'>Español</option>
+                      <option value='Ingles'>Inglés</option>
+                      <option value='Otro'>Otro</option>
+                    </select>
+                  </div>
+
+                  <div >
+                    <label htmlFor='travel'>Disponivilidad para viajar</label>
+                    <select  id='travel' ref={travel => this.inputTravel = travel}>
+                      <option value='Si'>Si</option>
+                      <option value='No'>No</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor='experience'>Experiencia</label>
+                    <input type='text'  id='experience' 
+                      placeholder='Experiencia' ref={experience => this.inputExperience = experience} />
+                  </div>
+
+                  <h4>Condiciones de trabajo</h4>
+                  <div>
+                    <label htmlFor='place'>Lugar de trabajo</label>
+                    <input type='text'  id=' place' 
+                      placeholder='Lugar' ref={ place => this.inputPlace =  place} />
+                  </div>
+
+                  <div>
+                    <label htmlFor='workingHours'>Horario</label>
+                    <input type='text'  id='workingHours' 
+                      placeholder='Hora' ref={ workingHours => this.inputWorkingHours =  workingHours} />
+                  </div>
+
+                  <div>
+                    <label htmlFor='salary'>Sueldo</label>
+                    <input type='text'  id='salary' 
+                      placeholder='Cantidad' ref={salary => this.inputSalary = salary} />
+                  </div>
+
+                  <h4>Aprobación</h4>
+                  <div >
+                    <label htmlFor='approved'>La requisición es:</label>
+                    <select  id='approved' ref={approved => this.inputApproved = approved}>
+                      <option value='Aprobada'>Aprobada</option>
+                      <option value='Rechazada'>Rechazada</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor='message'>Comentarios</label>
                     <textarea className='form-control' id='message' 
                       rows='3' ref={message => this.textAreaMessage = message}>
                     </textarea>
-                  </div>
+                  </div> 
+
                   <button type='submit' className='btn btn-primary'>Send</button>
                 </form>
-              </div>
             </div>
           </div>
         </div>
