@@ -1,0 +1,48 @@
+.Postulantes {
+   
+    display: flex;
+
+    margin: auto;
+    width: 1200px;
+
+}
+.Contenedor{
+    width: 300px;
+    height: 290px;
+    margin: auto;
+    text-align: center;
+    margin-top: 60px;
+     border-radius: 8px;
+     border: 5px solid #3C3FA0;
+}
+.foto{
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+}
+.Postulantes button{
+    background-color: #A1C3FC;
+    width: 100px;
+    height: 35px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+
+}
+.Postulantes h4 {
+    margin: auto;
+    width: 190px;
+    font-family: 'Poppins', sans-serif;
+}
+.title{
+    margin-left: 7%;
+}
+.line {
+    width: 94%;
+    height: 1em;
+    background-color: #3C3FA0;
+    border-radius: 12px;
+    border:none;
+    scroll-margin-left: 3%;
+}

@@ -4,9 +4,11 @@ import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
 import EstadoRequisiciones from '../Database/EstadoRequisiciones';
+import '../Navigation/Navigation.css'
+
 
 const Navigation = () => (
-  <div>
+  <div className="navigation">
     <AuthUserContext.Consumer>
       {authUser =>
         authUser ? <NavigationAuth /> : <NavigationNonAuth />
@@ -24,6 +26,11 @@ const NavigationAuth = () => (
     <li>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
     </li>
+    <li>
+      <Link to={ROUTES.POSTULANTES}>Postulantes</Link>
+    </li>
+
+
     {/* <li>
       <Link to={ROUTES.ADMIN}>Admin</Link>
     </li> */}

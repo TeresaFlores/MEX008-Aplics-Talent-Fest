@@ -13,6 +13,7 @@ import { withAuthentication } from '../Session';
 // import LandingRH from '../RecursosHumanos';
 import New from '../New';
 import EstadoRequisiciones from '../Database/EstadoRequisiciones';
+import Postulantes from '../Postulantes/Postulantes';
 
 
 
@@ -31,6 +32,7 @@ const App = () => (
       <Route path={ROUTES.NEW} component={New} />
       {/* <Route path={ROUTES.REQUISICION_FORM} component={HomePage}/> */}
       <Route path={ROUTES.REQUISICION_FORM} component={EstadoRequisiciones}/>
+      <Route path={ROUTES.POSTULANTES} component={Postulantes}/>
     </div>
   </Router>
 
