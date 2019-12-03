@@ -48,7 +48,7 @@ class Requisicion extends Component {
       if (params.name && params.email && params.phone && params.phone && params.message) {
         // enviamos nuestro objeto "params" a firebase database
         console.log(firebaseConf.auth().currentUser)
-        firebaseConf.database().ref('paramsform').push(params).then(() => {
+        firebaseConf.database().ref('params7form').push(params).then(() => {
           // Si todo es correcto, actualizamos nuestro estado para mostrar una alerta.
           this.showAlert('success', 'Your message was sent successfull');
         }).catch((e) => {
@@ -64,57 +64,12 @@ class Requisicion extends Component {
       };
     }
   
+
+
+    
     render() {
       return (
-        <div>
-          {this.state.alert && <div className={`alert alert-${this.state.alertData.type}`} role='alert'>
-            <div className='container'>
-              {this.state.alertData.message}
-            </div>
-          </div>}
-          <div className='container' style={{ padding: `40px 0px` }}>
-            <div className='row'>
-              <div className='col-sm-4'>
-                <h2>Contact Form</h2>
-                <form onSubmit={this.sendMessage.bind(this)} ref='contactForm' >
-                  <div className='form-group'>
-                    <label htmlFor='name'>Name</label>
-                    <input type='text' className='form-control' id='name' 
-                      placeholder='Name' ref={name => this.inputName = name} 
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <label htmlFor='exampleInputEmail1'>Email</label>
-                    <input type='email' className='form-control' id='email' 
-                      placeholder='Email' ref={email => this.inputEmail = email} 
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <label htmlFor='city'>City</label>
-                    <select className='form-control' id='city' ref={city => this.inputCity = city}>
-                      <option value='México'>México</option>
-                      <option value='Guadalajara'>Guadalajara</option>
-                      <option value='Monterrey'>Monterrey</option>
-                    </select>
-                  </div>
-                  <div className='form-group'>
-                    <label htmlFor='phone'>Phone</label>
-                    <input type='number' className='form-control' id='phone' 
-                      placeholder='+52 1' ref={phone => this.inputPhone = phone} 
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <label htmlFor='message'>Message</label>
-                    <textarea className='form-control' id='message' 
-                      rows='3' ref={message => this.textAreaMessage = message}>
-                    </textarea>
-                  </div>
-                  <button type='submit' className='btn btn-primary'>Send</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h1>hola</h1>
       );
     }
   }
